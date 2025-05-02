@@ -65,6 +65,8 @@ def get_time():
 
 # 获取登录code
 def get_access_token(location):
+    self.log_str += location
+    self.log_str += "\n"
     code_pattern = re.compile("(?<=access=).*?(?=&)")
     result = code_pattern.findall(location)
     if result is None or len(result) == 0:
